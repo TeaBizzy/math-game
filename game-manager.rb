@@ -18,6 +18,7 @@ class GameManager
     game_manager()
   end
 
+
   # Creates player objects
   private def create_players(names)
     @players.push(Player.new(names[0]))
@@ -60,6 +61,7 @@ class GameManager
     end
   end
 
+  # Ends the game loop
   private def game_over()
     @current_sate = STATES[:game_over]
     @winner = get_other_player()
@@ -67,6 +69,7 @@ class GameManager
     puts "-- [ Game Over! ] --"
     puts "Winner is #{@winner.name}!"
   end
+
 
   # Returns the non-current player
   private def get_other_player()
